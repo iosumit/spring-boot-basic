@@ -1,10 +1,8 @@
 package com.springlearn.student;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 // @Component can also be used 
@@ -18,7 +16,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List getStudents() {
+    public List<Student> getStudents() {
         return studentRepository.findAll();
     }
 }
