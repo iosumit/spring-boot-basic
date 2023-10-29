@@ -3,8 +3,10 @@ package com.springjpa;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class JpaApplication {
@@ -13,11 +15,18 @@ public class JpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
 
-		hello(null, () -> {
-			System.out.println("ssss");
-		});
+		// hello(null, () -> {
+		// System.out.println("ssss");
+		// });
+		// System.out.println(convertName.apply("usnjedje"));
+	}
 
-		System.out.println(convertName.apply("usnjedje"));
+	@Bean
+	CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
+		return args -> {
+			Student s = new Student("Firstname", "Lastname", "fl@gmail.com", 23);
+			studentRepository.save(s);
+		};
 	}
 
 	static void hello(String name, Runnable x) {
