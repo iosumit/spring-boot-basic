@@ -1,0 +1,41 @@
+
+RDBMS - SQL, MySQL, PostgreSQL
+- Complex Relationship
+- Slow 
+- Transaction      
+
+Non RDBMS - Mongodb, Casandra, SyllaDB
+- Fast
+
+Database
+User Schema - 
+id   ------- user id
+name
+email
+username
+password
+profile_picture_url
+created_at
+verified
+
+Tweets Schema - 
+0. id
+1. caption
+2. created_at
+3. updated_at
+4. user_id
+
+Likes Schema - 
+0. id
+1. user_id
+2. tweet_id
+3. created_at
+
+Follow_Following Schema - 
+id
+who_to_user_id
+who_from_user_id
+created_at
+
+
+https://api.elephantsql.com/console/
